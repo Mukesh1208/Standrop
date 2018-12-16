@@ -1,0 +1,50 @@
+<section>
+
+  <article>
+<form method="POST" action="/add_comment">
+  <Input type="hidden" id='name' name="name" value="{{user.name}}">
+      <Input type="hidden" id='email' name="email" value="{{user.email}}">
+<div class='exterior__bottom--md'>
+<input class='form--block-input' id='services' name='service' value="{{user.services}}" placeholder='Services' type='text'>
+</div>
+
+  <div class="input-field">
+      <label>Comment:</label>
+      <textarea type="text" name="comment" value="{{user.comments}}" rows="20" placeholder="What's on your mind?"></textarea>
+  </div>
+  <button type="submit">Add Comment</button>
+</form>
+
+
+</article>
+
+
+
+<div>
+
+
+
+  <table  class="table table-striped table-bordered table-hover table-checkable" >
+              <thead>
+
+              <tr>
+<th>User</th>
+                <th>services</th>
+              <th>Comments</th>
+
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                      {{#each com}}
+<tr>  <td>{{this.name}} </td>
+ <td> {{this.services}} </td>
+    <td>  {{this.comments}}</td> </tr>
+
+                      {{/each}}
+</tr>
+                      </tbody>
+                      </table>
+</div>
+
+</section>

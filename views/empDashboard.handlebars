@@ -1,0 +1,67 @@
+
+   <head>
+     <link rel="stylesheet" href="../../assets/css/userdashboard.css">
+  </head>
+
+  <body>
+
+    <br/>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Hello Employee</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="/emp_dashboard">My Dashboard</a>
+
+<a class="btn btn-outline-primary" href="/logout">Logout</a>
+      </nav>
+
+    </div>
+    <div class='main--content'>
+    <section  class='static-section--flat bring-your-talent hiw-lateral'>
+        <div class='container--wide'>
+
+            <form action="assign_task" method="post" >
+
+
+
+    <div class='row row--thin' style="background-color: lightgray">
+        <p style="color:red">{{errorMSG}}</p>
+    <p style="color:green">{{successMSG}}</p>
+
+    <table  class="table table-striped table-bordered table-hover table-checkable" >
+                <thead>
+
+                <tr>
+
+                <th>Service</th>
+                <th>User</th>
+                <th>Contact</th>
+                <th>Task Time</th>
+                <th>Location</th>
+                <th>TaskDetail</th>
+                <!--<th>Status</th>          -->
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each notifications}}
+    <tr>
+
+    <th>{{this.service_name}}</th>
+                <th>{{this.user_name}}</th>
+                <th>{{this.user_number}}</th>
+                <th>{{this.task_time}}</th>
+                <th>{{this.location}}</th>
+                <th>{{this.task_detail}}</th>
+                        </tr>
+                        {{/each}}
+                        </tbody>
+                        </table>
+                        </form>
+    </div></div>
+
+    </section>
+    </div>
+
+    </div>
+    </div>
+</article>
